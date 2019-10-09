@@ -1,0 +1,163 @@
+:root {
+  --form-bg-color: #13232f;
+  --form-text-color: #ffffff;
+  --form-button-color: #1ab188;  
+  --tab-group-bg-color: #2d2f30;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: red;
+}
+
+#login-section h2 {
+  text-align: center;
+}
+
+#form {
+  margin: 10% auto;
+  width: 400px;
+  background-color: var(--form-bg-color);
+  color: var(--form-text-color);
+  padding: 1.5rem;
+  padding-top: 0.5rem;
+  border-radius: 4px;
+  font-family: "Titillium Web", sans-serif;
+  /* box-shadow: 0 4px 10px 4px rgba(var(--form-bg-color), 0.3); */
+}
+
+#register-section h2 {
+  text-align: center;
+}
+
+.tab-group {
+  display: flex;
+  padding: 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  list-style: none;
+  width: 100%;
+  background-color: var(--tab-group-bg-color);
+}
+
+.tab-group > .active {
+  background-color: var(--form-button-color);
+}
+
+.tab-group > .tab {
+  width: 50%;
+  text-align: center;
+  padding: 0.5rem;
+  border: solid 1px white;
+  cursor: pointer;
+}
+
+.tab-group > .tab:hover {
+  opacity: 0.5;
+}
+
+.tab-group > .tab > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#create-user {
+  display: grid; 
+  grid-template-rows: 2em 2em 2em 2em 4.5rem 2rem;
+  grid-row-gap: 0.5rem;
+  grid-template-columns: 30% 70%;
+  grid-column-gap: 0.5rem;
+}
+
+#create-user label, #create-user input {
+  grid-column: span 1;
+}
+
+.g-recaptcha {
+  transform: scale(1);
+  grid-column: span 2; 
+}
+
+#login-user {
+  display:grid;
+  grid-template-rows: 2em 2em 4.5em 2em;
+  grid-row-gap: 0.5rem;
+  grid-template-columns: 30% 70%;
+  grid-column-gap: 0.5rem;
+}
+
+input {
+  color: inherit;
+  background-color: var(--form-bg-color);
+  border: solid 1px var(--form-text-color);
+}
+
+input:focus {
+  outline: none;
+}
+input[type='submit'] {
+  color: inherit;
+  grid-column: span 2 !important;
+  background-color: var(--form-button-color);
+  cursor: pointer;
+}
+
+input[type='submit']:hover {
+  opacity: 0.7;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+@media (max-width: 42rem) {
+  #form {
+    margin: 0;
+    width: 100%;
+  }
+
+  #form label {
+    color: blueviolet;
+  }
+
+  #create-user {
+    grid-template-rows: 2em 2em 2em 2em 2em 2em 2em 2em 4.5em 2em;
+  }
+  
+  #create-user label, #create-user input {
+    grid-column: span 2;
+  }
+
+  #create-user input:last-child {
+    grid-column: span 2;
+  }
+
+  .g-recaptcha {
+    transform: scale(0.8);
+    transform-origin: 0 0;
+  }
+
+  #create-user > input {
+  }
+  
+  #login-user {
+    /* display:grid;
+    grid-template-rows: 2em 2em 4.5em 2em;
+    grid-row-gap: 0.5rem;
+    grid-template-columns: 10rem auto;
+    grid-column-gap: 0.5rem; */
+    grid-template-rows: 2em 2em 2em 2em 4.5em 2em;
+  }
+
+  #login-user label, #login-user input {
+    grid-column: span 2;
+  }
+
+}
