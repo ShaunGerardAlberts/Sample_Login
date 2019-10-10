@@ -26,7 +26,6 @@ body {
   padding-top: 0.5rem;
   border-radius: 4px;
   font-family: "Titillium Web", sans-serif;
-  /* box-shadow: 0 4px 10px 4px rgba(var(--form-bg-color), 0.3); */
 }
 
 #register-section h2 {
@@ -76,6 +75,17 @@ body {
   grid-column: span 1;
 }
 
+/* add HTML required to iframe */
+#g-recaptcha-response {
+  display: block !important;
+  position: absolute;
+  margin: -78px 0 0 0 !important;
+  width: 302px !important;
+  height: 76px !important;
+  z-index: -999999;
+  opacity: 0;
+}
+
 .g-recaptcha {
   transform: scale(1);
   grid-column: span 2; 
@@ -83,7 +93,7 @@ body {
 
 #login-user {
   display:grid;
-  grid-template-rows: 2em 2em 4.5em 2em;
+  grid-template-rows: 2em 2em 1em 2em;
   grid-row-gap: 0.5rem;
   grid-template-columns: 30% 70%;
   grid-column-gap: 0.5rem;
@@ -144,16 +154,8 @@ input[type='submit']:hover {
     transform-origin: 0 0;
   }
 
-  #create-user > input {
-  }
-  
   #login-user {
-    /* display:grid;
-    grid-template-rows: 2em 2em 4.5em 2em;
-    grid-row-gap: 0.5rem;
-    grid-template-columns: 10rem auto;
-    grid-column-gap: 0.5rem; */
-    grid-template-rows: 2em 2em 2em 2em 4.5em 2em;
+    grid-template-rows: 2em 2em 2em 2em 1.5em 2em;
   }
 
   #login-user label, #login-user input {

@@ -2,7 +2,6 @@ var bodyParser = require('body-parser');
 var request = require('request');
 var bcrypt = require('bcryptjs');
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
-const axios = require('axios');
 var Logins = require('../model/loginmodel');
 var sendEmail = require('../utils/sendEmail');
 var recaptchaKey = require('../config/index').getRecaptchaKey;
@@ -103,16 +102,34 @@ module.exports = (app) => {
 
   app.post('/login', urlencodedParser, (req, res) => {
 
-    var dbPassword = '$2a$10$KDAuHMMigNgpGxgdzUsLHus/UHnhzAn4FGlpPx8fhdouGhr5nCPC2';
+    var hash = '$2a$10$/FYuJQ1tpmP7GJ.TV.3SXuEhmxcXV6HfA74A7FWVjISV.SOwjNucO';
+    // res.send("hello")
+    // var sdf = bcrypt.compareSync(req.body.password, hash);
+    // console.log(sdf);
+    var loginState = '';
 
-     bcrypt.compare(req.body.password, dbPassword, function(err, res) {
-        // res === true
-        if (res === true) {
-          console.log('great');
-        } else {
-          console.log('nope')
-        }
-      });
+    bcrypt.compare(req.body.password, hash).then(function(res2) {
+      // res == true
+      if (res2 === true) {
+        console.log('Not implemented - but login successful');
+        loginState = true;
+        return;
+      } else {
+        console.log('Not implemented - but login unsuccessful');
+        loginState = false;
+        return;
+      }
+    }).then(function(res3) {
+      console.log(loginState);
+      if (loginState) {
+        res.send('Not implemented - but login successful');
+      } else if (!loginState) {
+        res.send('Not implemented - but login unsuccessful');
+      } else {
+        res.send('Oh no, something went wrong, please try again')
+      }
+    });
+
   });
 
 
