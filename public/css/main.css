@@ -133,8 +133,8 @@ input[type='submit']:hover {
     width: 100%;
   }
 
-  #form label {
-    color: blueviolet;
+  .tab-group > .tab:hover {
+    opacity: 1;
   }
 
   #create-user {

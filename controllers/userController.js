@@ -29,7 +29,7 @@ module.exports = (app) => {
     }
 
     // Recaptcha key
-    const secretKey = recaptchaKey();
+    const secretKey = process.env.SECRET_RECAPTCHA_KEY || recaptchaKey();
 
     // Verify URL
     const verifyUrl = `https://google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptcha}&remoteip=${req.connection.remoteAddres}`;
