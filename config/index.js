@@ -30,6 +30,9 @@ module.exports = {
   },
   getPort: () => {
     return config.port;
+  },
+  getURL: () => {
+    return config.url;
   }
 
 }
