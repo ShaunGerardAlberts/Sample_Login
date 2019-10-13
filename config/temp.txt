@@ -1,9 +1,0 @@
-{
-  "config": {
-    "mongoString": "mongodb://shaun:password2380@ds123500.mlab.com:23500/loginsample",
-    "recaptchKey": "6Lev0bsUAAAAAH0EJ7JdOV7xdsIKZjMIk2kukYr1",
-    "emailSender": "gmail",
-    "emailUsername": "alberts.shaun@gmail.com",
-    "emailPassword": "wordH0ly@#80google"
-  }
-}
