@@ -1,5 +1,7 @@
 {
   "config": {
+    "environment": "dev",
+    "port": "1000",
     "mongoString": "0302d2212dd207a5a89c7b59a00f22b352bb03556498eeb5a074378435fe65ec859ac7e0b3c94cee8f9d5488c8f11df9f84b5aac12f562ac4b79171543d0b468d3c006e4d6fba5ac0430a8b117bdca03",
     "recaptchKey": "313187a60c5a82c0113e7a7a2db52404991cd2197042a1b799eea9e5f5041f8479847c7b73868e7d57ece41c2e001c1a",
     "emailSender": "2f48073773482ccd669106b01bfeb9e6",

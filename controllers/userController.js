@@ -7,12 +7,12 @@ var sendEmail = require('../utils/sendEmail');
 var recaptchaKey = require('../config/index').getRecaptchaKey;
 var encryptionSettings = require('../config/index').getEncryptionSettings;
 var jsonParser = bodyParser.json();
+var config = require('../config');
 
 module.exports = (app) => {
   
-  var isProduction = (process.env.PORT) ? true : false;
   app.get('/', (req, res) => {
-    res.render("index", {prod: isProduction});
+    res.render("index", {prod: config.getEnvironment()});
   });
 
   app.post('/createuser', urlencodedParser, (req, res) => {

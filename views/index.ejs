@@ -27,7 +27,7 @@
         <input type="email" name='email' id="email" required>
         <label for="password">Password: </label><input type="password" name="password" id="password" required>
         <label for="confirm-password">Confirm password:</label><input type="password" name="confirm-password" id="confirm-password" required>
-        <% if (prod) { %> <div class="g-recaptcha" data-sitekey="6Ld_Ub0UAAAAAB9YGIpcO38GcJybjpBKDeiqtq0B"></div> <% } else { %> <div class="g-recaptcha" data-sitekey="6Lev0bsUAAAAAEcv5Lt9ibPVpu0ng374-rwts9U4"></div> <% } %> 
+        <% if (prod === "prod") { %> <div class="g-recaptcha" data-sitekey="6Ld_Ub0UAAAAAB9YGIpcO38GcJybjpBKDeiqtq0B"></div> <% } else { %> <div class="g-recaptcha" data-sitekey="6Lev0bsUAAAAAEcv5Lt9ibPVpu0ng374-rwts9U4"></div> <% } %> 
         
         <input type="submit" value="Submit">
       </form>

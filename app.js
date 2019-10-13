@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var config = require('./config');
 var userController = require('./controllers/userController');
 
-var port = process.env.PORT || 1000;
+var port = config.getPort();;
 
 app.set('view engine', 'ejs');
 var connectDB = mongoose.connect(config.getDBConnectionString());

@@ -24,6 +24,12 @@ module.exports = {
       planTextPassword: "FD234sadf#@D#",
     };
     return enryptionSettings;
+  },
+  getEnvironment: () => {
+    return config.environment;
+  },
+  getPort: () => {
+    return config.port;
   }
 
 }
