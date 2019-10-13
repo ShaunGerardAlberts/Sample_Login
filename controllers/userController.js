@@ -11,7 +11,7 @@ var jsonParser = bodyParser.json();
 module.exports = (app) => {
   
   app.get('/', (req, res) => {
-    res.render("index");
+    res.render("index", {prod: process.env.PORT});
   });
 
   app.post('/createuser', urlencodedParser, (req, res) => {
@@ -40,7 +40,7 @@ module.exports = (app) => {
       body = JSON.parse(body);
 
       // if not sucessfull
-      if (body.success != undefined && !body.success) {
+      if (body.success == undefined && !body.success) {
         return res.json({"success": false, "msg": "Failed captcha verification"});
       }
 

@@ -18,7 +18,8 @@
     </ul>
     
     <div id="register-section" class="show">
-      <h2>Sign up for Free</h2>
+      <h2>Sign up for Free </h2>
+      
       <form id="create-user" action="/createuser" method="POST">
         <label for="username">Username:</label>
         <input type="text" name="username" id="username" required>
@@ -26,7 +27,8 @@
         <input type="email" name='email' id="email" required>
         <label for="password">Password: </label><input type="password" name="password" id="password" required>
         <label for="confirm-password">Confirm password:</label><input type="password" name="confirm-password" id="confirm-password" required>
-        <div class="g-recaptcha" data-sitekey="6Lev0bsUAAAAAEcv5Lt9ibPVpu0ng374-rwts9U4"></div>
+        <% if (prod) { %> <div class="g-recaptcha" data-sitekey="6Ld_Ub0UAAAAAB9YGIpcO38GcJybjpBKDeiqtq0B"></div> <% } else { %> <div class="g-recaptcha" data-sitekey="6Lev0bsUAAAAAEcv5Lt9ibPVpu0ng374-rwts9U4"></div> <% } %> 
+        
         <input type="submit" value="Submit">
       </form>
     </div>
