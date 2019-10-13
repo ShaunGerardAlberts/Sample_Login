@@ -10,8 +10,9 @@ var jsonParser = bodyParser.json();
 
 module.exports = (app) => {
   
+  var isProduction = (process.env.PORT) ? true : false;
   app.get('/', (req, res) => {
-    res.render("index", {prod: process.env.PORT});
+    res.render("index", {prod: isProduction});
   });
 
   app.post('/createuser', urlencodedParser, (req, res) => {
