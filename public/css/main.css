@@ -127,7 +127,7 @@ input[type='submit']:hover {
   display: block;
 }
 
-@media (max-width: 42rem) {
+@media (max-width: 52rem) {
   #form {
     margin: 0;
     width: 100%;

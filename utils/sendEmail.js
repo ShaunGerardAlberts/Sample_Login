@@ -5,6 +5,8 @@ var config = require('../config');
 
 module.exports = (user, returnSendStatus) => {
 
+  var url = config.getURL();
+
   var transporter = nodemailer.createTransport({
     service: emailAcc.sender,
     auth: {
@@ -18,7 +20,7 @@ module.exports = (user, returnSendStatus) => {
     to: user.email,
     subject: 'Shaun\'s App - Please confirm your email address',
     text: 'That was easy!',
-    html: `<body><h1>Shaun App</h1><p>Thank you for signing up at Shaun\'s app</p><p>Follow this link to activate your subcription. <a href=${config.getURL}/verify/${user.username}2342233activate_me/${user.id}">Activate Now</a></body>` 
+    html: `<body><h1>Shaun App</h1><p>Thank you for signing up at Shaun\'s app</p><p>Follow this link to activate your subcription. <a href="${url}/verify/${user.username}2342233activate_me/${user.id}">Activate Now</a></body>` 
   };
 
   console.log(user)
